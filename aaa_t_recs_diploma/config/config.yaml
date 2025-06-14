@@ -1,0 +1,20 @@
+app:
+  views:
+    main_content_path: main.html
+    recommendation_content_path: recommendation.html
+    templates: ../../views/templates
+  database:
+    faiss:
+      path: ../../data/faiss/embedding.faiss
+      embedding_dim: 1024
+      emb_from_df: false
+      emb_df_path: ../../data/raw/truncated/rec_aaa_title_desc.pq
+      pretrained_model_name: cointegrated/rubert-tiny2
+      pretrained_model_path: ../../src/model/content/trained
+    url: postgresql+psycopg2://postgres_user:postgres_password@db_container:5432/postgres_db
+    db_from_df: true
+    item_df_path: ../../data/raw/truncated/rec_aaa_title_desc.pq
+    user_df_path: ../../src/model/collaborative/data/predicted_info.csv
+  collaborative:
+    predict: ../../src/model/collaborative/data/predicted_info.csv
+    mapping: ../../src/model/collaborative/data/mapper.json

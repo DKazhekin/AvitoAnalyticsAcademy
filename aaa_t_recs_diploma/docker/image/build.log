@@ -1,0 +1,74 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 591B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 1.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/12] FROM docker.io/library/python:3.11-slim@sha256:7a3ed1226224bcc1fe5443262363d42f48cf832a540c1836ba8ccbeaadf8637c
+#5 resolve docker.io/library/python:3.11-slim@sha256:7a3ed1226224bcc1fe5443262363d42f48cf832a540c1836ba8ccbeaadf8637c done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 414B done
+#6 DONE 0.0s
+
+#7 [ 3/12] RUN pip install poetry
+#7 CACHED
+
+#8 [ 9/12] RUN chmod +x /tmp/install.sh
+#8 CACHED
+
+#9 [ 2/12] RUN apt-get update &&     apt-get install -y --no-install-recommends     build-essential     && apt-get clean     && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [ 5/12] COPY ./docker/install.sh /tmp/install.sh
+#10 CACHED
+
+#11 [ 6/12] COPY ./poetry.lock .
+#11 CACHED
+
+#12 [ 8/12] COPY .env .
+#12 CACHED
+
+#13 [11/12] COPY ./docker/run_app.sh .
+#13 CACHED
+
+#14 [ 7/12] COPY ./pyproject.toml .
+#14 CACHED
+
+#15 [10/12] RUN /tmp/install.sh /app/venv
+#15 CACHED
+
+#16 [ 4/12] WORKDIR /app
+#16 CACHED
+
+#17 [12/12] RUN chmod +x ./run_app.sh
+#17 CACHED
+
+#18 exporting to image
+#18 exporting layers done
+#18 exporting manifest sha256:60ebd4f68aae96ff4506cff626bdde329973266aae8eac423921e840e050a2eb done
+#18 exporting config sha256:97864bc3424325baa718d8cf1a271cd6dd0d0bf6e03ab3b666b694b1570cb244 done
+#18 exporting attestation manifest sha256:b311065a20f6fe8ff4da7bf1366d7f709d6028238eeb70adab35c6f529a57f15 done
+#18 exporting manifest list sha256:e98e3d3d07d79a0dffe9a698ce2ee578168b597ed34aafe422a08d587434bfaf done
+#18 naming to docker.io/library/recommendation_container:latest done
+#18 unpacking to docker.io/library/recommendation_container:latest done
+#18 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/ut0lzs860k1uv79hujjtbh8zm
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 3)
